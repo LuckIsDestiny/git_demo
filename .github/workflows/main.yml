@@ -8,15 +8,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
+    - run: env
     
   build-api:
     runs-on: windows-latest
     needs: build
-
     steps:
-    - name: Setup Node.js
-      uses: actions/setup-node@v2
-      with:
-        node-version: '14'
+    - run: env
