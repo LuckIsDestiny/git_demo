@@ -1,7 +1,7 @@
 name: Artifact demo
 
-on:
-  workflow_dispatch:
+on: push
+    
 
 jobs:
   job-1:
