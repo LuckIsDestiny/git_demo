@@ -15,6 +15,7 @@ jobs:
         with:
           name: file
           path: file.txt
+          retention-days: 14
 
   job-2:
     name: Download artifact
