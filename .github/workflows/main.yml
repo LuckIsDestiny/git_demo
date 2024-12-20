@@ -1,4 +1,4 @@
-name: Github Action Demo
+name: Artifact demo
 
 on:
   workflow_dispatch:
