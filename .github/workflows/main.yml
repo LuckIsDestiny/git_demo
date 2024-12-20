@@ -2,16 +2,18 @@ name: Github Action Demo
 
 on:
   workflow_dispatch:
-    
-jobs:
-  build:
-    runs-on: ubuntu-latest
 
+jobs:
+  deployment:
+    runs-on: ubuntu-latest
     steps:
-    - run: env
-    
-  build-api:
-    runs-on: windows-latest
-    needs: build
-    steps:
-    - run: env
+      - name: Print Secret
+        run: |
+          echo "MY_TOP_SECRET": ${{ secrets.MY_TOP_SECRET }}
+          echo "i_dont_exist": ${{ secrets.i_dont_exist }}
+      
+      - name: Print secrets as an environment variable
+        run: |
+          echo "MY_TOP_SECRET: $MY_TOP_SECRET"
+        env:
+          AZURE_CREDENTIALS: ${{ secrets.MY_TOP_SECRET }}
